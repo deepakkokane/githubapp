@@ -30,6 +30,7 @@ const Signin = () => {
       .signInWithEmailAndPassword(email, pass)
       .then((res) => {
         context.setUser({ email: res.user.email, uid: res.user.uid });
+        toast("Login Success !", { type: "success" });
       })
       .catch((err) => {
         toast(err.message, { type: "error" });
